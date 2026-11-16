@@ -28,6 +28,18 @@ enableRobotsTXT = true
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
   ShowRssButtonInSectionTermList = true
+  # Default image for link previews (Open Graph, Twitter card), file in static/
+  images = ["social-preview.png"]
+
+  # Logo next to the site title in the header (file in assets/)
+  [params.label]
+    icon = "images/logo.png"
+    iconHeight = 35
+
+  # Favicons are static/favicon.ico, favicon-16x16.png, favicon-32x32.png and apple-touch-icon.png (theme defaults)
+  [params.assets]
+    theme_color = "#2554a9"
+    msapplication_TileColor = "#2554a9"
 
   [params.fuseOpts]
     isCaseSensitive = false
