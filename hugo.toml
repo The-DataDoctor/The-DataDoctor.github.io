@@ -4,6 +4,7 @@ theme = "PaperMod"
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true   # /en/ und /de/ sind gleichberechtigt
+enableRobotsTXT = true
 
 [pagination]
   pagerSize = 10
@@ -11,39 +12,109 @@ defaultContentLanguageInSubdir = true   # /en/ und /de/ sind gleichberechtigt
 [markup.highlight]
   noClasses = false
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# The JSON output of the home page is the search index (Fuse.js, runs in the browser).
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [params]
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowCodeCopyButtons = true
   ShowToc = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowRssButtonInSectionTermList = true
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 2
+    keys = ["title", "permalink", "summary", "content"]
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/sebastian-zok-6a88b058/"
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/The-DataDoctor"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "index.xml"
 
 [languages]
   [languages.en]
     label = "English"
+    locale = "en"
     weight = 1
     contentDir = "content/en"
     [languages.en.params]
       description = "Diagnoses, prescriptions and regenerations for Db2 LUW"
-    [[languages.en.menu.main]]
+      [languages.en.params.homeInfoParams]
+        Title = "Welcome to the Clinic"
+        Content = "Diagnoses, prescriptions and regenerations for Db2 LUW: troubleshooting, practical how-tos and upgrades. I'm Sebastian, database administrator and volunteer at [IDUG](https://www.idug.org/). Every post appears in English and German."
+    [[languages.en.menus.main]]
       name = "Posts"
-      url = "/en/posts/"
-      weight = 1
-    [[languages.en.menu.main]]
+      pageRef = "/posts"
+      weight = 10
+    [[languages.en.menus.main]]
+      name = "Categories"
+      pageRef = "/categories"
+      weight = 20
+    [[languages.en.menus.main]]
+      name = "Tags"
+      pageRef = "/tags"
+      weight = 30
+    [[languages.en.menus.main]]
+      name = "Archive"
+      pageRef = "/archives"
+      weight = 40
+    [[languages.en.menus.main]]
+      name = "Search"
+      pageRef = "/search"
+      weight = 50
+    [[languages.en.menus.main]]
       name = "About"
-      url = "/en/about/"
-      weight = 2
+      pageRef = "/about"
+      weight = 60
 
   [languages.de]
     label = "Deutsch"
+    locale = "de"
     weight = 2
     contentDir = "content/de"
     [languages.de.params]
       description = "Diagnosen, Rezepte und Regenerationen rund um Db2 LUW"
-    [[languages.de.menu.main]]
+      [languages.de.params.homeInfoParams]
+        Title = "Willkommen in der Clinic"
+        Content = "Diagnosen, Rezepte und Regenerationen rund um Db2 LUW: Troubleshooting, praxisnahe How-tos und Upgrades. Ich bin Sebastian, Datenbankadministrator und ehrenamtlich bei der [IDUG](https://www.idug.org/) aktiv. Jeder Beitrag erscheint auf Deutsch und Englisch."
+    [[languages.de.menus.main]]
       name = "Beiträge"
-      url = "/de/posts/"
-      weight = 1
-    [[languages.de.menu.main]]
+      pageRef = "/posts"
+      weight = 10
+    [[languages.de.menus.main]]
+      name = "Kategorien"
+      pageRef = "/categories"
+      weight = 20
+    [[languages.de.menus.main]]
+      name = "Tags"
+      pageRef = "/tags"
+      weight = 30
+    [[languages.de.menus.main]]
+      name = "Archiv"
+      pageRef = "/archives"
+      weight = 40
+    [[languages.de.menus.main]]
+      name = "Suche"
+      pageRef = "/search"
+      weight = 50
+    [[languages.de.menus.main]]
       name = "Über mich"
-      url = "/de/about/"
-      weight = 2
+      pageRef = "/about"
+      weight = 60

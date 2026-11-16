@@ -1,0 +1,17 @@
+{{- /*
+  Legal and info links below the footer. A link only shows up if its page exists and is published,
+  so a page that is still a draft (for example the imprint) never produces a dead link.
+  The pages are connected over translationKey, so each language shows its own titles and URLs.
+*/ -}}
+{{- $keys := slice "imprint" "privacy" "contact" "disclaimer" -}}
+{{- $links := slice -}}
+{{- range $keys -}}
+  {{- range where site.RegularPages "Params.translationKey" . -}}
+    {{- $links = $links | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- if $links }}
+<nav class="legal-links" aria-label="Legal and contact">
+  {{- range $i, $p := $links }}{{ if $i }} · {{ end }}<a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>{{ end }}
+</nav>
+{{- end }}

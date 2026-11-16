@@ -4,6 +4,7 @@ date: 2026-11-16
 draft: false
 translationKey: "welcome"
 tags: ["Db2", "Willkommen"]
+categories: ["Neuigkeiten"]
 summary: "Worum es in diesem Blog geht und was dich erwartet."
 ---
 

@@ -1,0 +1,17 @@
+/* Legal links under the footer (see layouts/_partials/extend_footer.html) */
+.legal-links {
+  text-align: center;
+  font-size: 12px;
+  color: var(--secondary);
+  padding: 0 var(--gap) calc(var(--gap) * 1.5);
+}
+
+.legal-links a {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal-links a:hover {
+  color: var(--primary);
+}

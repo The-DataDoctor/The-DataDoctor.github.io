@@ -4,6 +4,7 @@ date: 2026-11-16
 draft: false
 translationKey: "welcome"
 tags: ["Db2", "Welcome"]
+categories: ["Clinic News"]
 summary: "What this blog is about, and what to expect."
 ---
 
