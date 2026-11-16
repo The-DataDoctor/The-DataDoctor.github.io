@@ -1,0 +1,49 @@
+baseURL = "https://the-datadoctor.github.io/"
+title = "The Data Doctor's Db2 Clinic"
+theme = "PaperMod"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true   # /en/ und /de/ sind gleichberechtigt
+
+[pagination]
+  pagerSize = 10
+
+[markup.highlight]
+  noClasses = false
+
+[params]
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+[languages]
+  [languages.en]
+    label = "English"
+    weight = 1
+    contentDir = "content/en"
+    [languages.en.params]
+      description = "Diagnoses, prescriptions and regenerations for Db2 LUW"
+    [[languages.en.menu.main]]
+      name = "Posts"
+      url = "/en/posts/"
+      weight = 1
+    [[languages.en.menu.main]]
+      name = "About"
+      url = "/en/about/"
+      weight = 2
+
+  [languages.de]
+    label = "Deutsch"
+    weight = 2
+    contentDir = "content/de"
+    [languages.de.params]
+      description = "Diagnosen, Rezepte und Regenerationen rund um Db2 LUW"
+    [[languages.de.menu.main]]
+      name = "Beiträge"
+      url = "/de/posts/"
+      weight = 1
+    [[languages.de.menu.main]]
+      name = "Über mich"
+      url = "/de/about/"
+      weight = 2
